@@ -70,5 +70,10 @@ const oddOccurencesInArray = (A) => {
     const num2 = sorted.pop();
     if (num1 !== num2) return num1;
   }
-  if (A.length === 1) return A[0];
+  if (sorted.length === 1) return sorted[0];
 };
+
+// Lesson3 FrogJmp (100%)
+const frogJmp = (X, Y, D) => {
+  return Math.ceil((Y - X) / D);
+}
