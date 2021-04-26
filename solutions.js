@@ -115,3 +115,39 @@ const permCheck = (A) => {
 
   return 1;
 }
+
+// Lesson5 CountDiv (75%)
+// const countDiv = (A, B, K) => {
+//   let start = A;
+//   while(start % K !== 0) {
+//     start++;
+//   }
+
+//   let count = 0;
+//   for(let i = start; i <= B; i = i + K) {
+//     if(i % K === 0) count++;
+//   }
+
+//   return count;
+// }
+
+// Lesson5 CountDiv (75%)
+// const countDiv = (A, B, K) => {
+//   let start = A;
+//   while(start % K !== 0) {
+//     start++;
+//   }
+
+//   return parseInt(((B - start) / K)) + 1;
+// }
+
+// Lesson5 CountDiv (100%)
+const countDiv = (A, B, K) => {
+  let start = A;
+  while(start % K !== 0) {
+    if(start === B) return 0;
+    start++;
+  }
+
+  return parseInt(((B - start) / K)) + 1;
+}
