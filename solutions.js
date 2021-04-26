@@ -77,3 +77,41 @@ const oddOccurencesInArray = (A) => {
 const frogJmp = (X, Y, D) => {
   return Math.ceil((Y - X) / D);
 }
+
+// Lesson3 PermMissingElem (10%)
+// const permMissingElem = (A) => {
+//   const sorted = A.sort();
+//   for(let i = 0; i < sorted.length; i++) {
+//     if(sorted[i] !== i + 1) return i+1;
+//   }
+// }
+
+// Lesson4 MissingInteger (100%)
+const MissingInteger = (A) => {
+  const counter = A.reduce((acc, cur) => {
+    if((cur > 0) && (acc[cur] === undefined)) acc[cur] = true;
+    return acc;
+  }, [true]);
+
+  for(let i = 0; i < counter.length; i++) {
+    if((i !== 0) && (counter[i] === undefined)) return i;
+  }
+
+  return counter.length === 1 ? 1 : counter.length;
+}
+
+// Lesson4 PermCheck (100%)
+const permCheck = (A) => {
+  const acc = new Array(A.length);
+
+  const counter = A.reduce((acc, cur) => {
+    if (acc[cur - 1] === undefined) acc[cur - 1] = true;
+    return acc;
+  }, acc);
+  
+  for(let i = 0; i < counter.length; i++) {
+    if(!counter[i]) return 0;
+  }
+
+  return 1;
+}
